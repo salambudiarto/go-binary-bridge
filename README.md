@@ -1,7 +1,10 @@
 # go-binary-bridge
+
 A high-performance, zero-dependency REST API prototype demonstrating raw binary data transfer (Uint8Array) over HTTP using Golang and Vanilla JS.
 
-# Minimalist Binary-over-HTTP Communication (Go & Vanilla JS)
+---
+
+## Deskripsi Proyek
 
 Proyek ini mendemonstrasikan implementasi komunikasi data **low-level binary** menggunakan **Golang** sebagai backend dan **Vanilla JavaScript** sebagai client. Alih-alih menggunakan format teks berat seperti JSON, sistem ini mentransfer byte mentah (`Uint8Array`) melalui protokol HTTP untuk efisiensi maksimal.
 
@@ -18,7 +21,7 @@ Bagi para pengembang profesional dan perekrut, proyek ini menunjukkan kompetensi
 
 ---
 
-##  Instalasi & Penggunaan
+## Instalasi & Penggunaan
 
 ### 1. Persiapan Server
 
@@ -26,10 +29,10 @@ Pastikan Go sudah terinstal, kemudian jalankan:
 
 ```bash
 # Clone repository ini
-git clone https://github.com/username/minimal-go-binary.git
+git clone [https://github.com/salambudiarto/go-binary-bridge.git](https://github.com/salambudiarto/go-binary-bridge.git)
 
 # Masuk ke direktori
-cd minimal-go-binary
+cd go-binary-bridge
 
 # Jalankan server
 go run main.go
@@ -84,4 +87,4 @@ Menyediakan interface `window.kirim` sebagai alat pengujian (debugging tool) yan
 
 ## Lisensi
 
-Didistribusikan di bawah Lisensi MIT. Lihat `LICENSE` untuk informasi lebih lanjut.
+Didistribusikan di bawah Lisensi MIT. Lihat file `LICENSE` untuk informasi lebih lanjut.
