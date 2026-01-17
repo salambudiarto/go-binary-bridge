@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><title>Instan Binary Console</title></head>
+<body>
+    <h1 style="font-family: sans-serif;">Buka Console (F12) dan ketik: <code>kirim("Halo")</code></h1>
+
+    <script>
+        // Memasukkan fungsi ke window agar bisa dipanggil langsung di console
+        window.kirim = async function(pesan) {
+            const encoder = new TextEncoder();
+            const decoder = new TextDecoder();
+            
+            // Konversi string input ke binary
+            const bodyBinary = encoder.encode(pesan);
+
+            try {
+                const response = await fetch('http://localhost:8080/api/binary', {
+                    method: 'POST',
+                    body: bodyBinary,
+                    headers: { 'Content-Type': 'application/octet-stream' }
+                });
+
+                // Ambil balasan dalam bentuk arrayBuffer (binary)
+                const buffer = await response.arrayBuffer();
+                const hasilString = decoder.decode(buffer);
+
+                console.log("Raw Binary:", new Uint8Array(buffer));
+                console.log("Hasil Teks:", hasilString);
+                
+                return hasilString; // Agar muncul juga sebagai return value di console
+            } catch (err) {
+                console.error("Gagal mengirim:", err);
+            }
+        };
+
+        console.log("🚀 Siap! Ketik kirim('Teks Anda') di bawah ini.");
+    </script>
+</body>
+</html>
